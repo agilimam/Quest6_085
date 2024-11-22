@@ -36,7 +36,7 @@ fun SplashView(onMulaiButton: ()-> Unit){
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(
-            onClick = {}
+            onClick = {onMulaiButton()}
         ) {
             Text("Mulai")
         }

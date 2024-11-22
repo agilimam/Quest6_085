@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.pertmuan8pam.navigation.PengelolaHalaman
 import com.example.pertmuan8pam.ui.theme.Pertmuan8PamTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Pertmuan8PamTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    PengelolaHalaman(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

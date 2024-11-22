@@ -58,7 +58,7 @@ fun PengelolaHalaman(
                 }
             )
         }
-        composable(route = Halaman.Mahasiswa.name){
+        composable(route = Halaman.Matakuliah.name){
             RencanaStudyView(
                 mahasiswa = mahasiswaUIState,
                 onSubmitButtonClicked = {
