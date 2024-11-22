@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pertmuan8pam.ui.screen.MahasiswaFormView
 import com.example.pertmuan8pam.ui.screen.SplashView
+import com.example.pertmuan8pam.ui.screen.Tampil
 import com.example.pertmuan8pam.ui.view.MahasiswaViewModel
 import com.example.pertmuan8pam.ui.view.RencanaStudyViewModel
 import com.example.petemuan8.ui.screen.RencanaStudyView
@@ -66,6 +67,15 @@ fun PengelolaHalaman(
                 },
                 onBackButtonClicked = {
                     navController.popBackStack()
+                }
+            )
+        }
+        composable(route = Halaman.Tampil.name) {
+            Tampil(
+                uiStateMahasiswa = mahasiswaUIState,
+                krsState = MatakuliahViewModel.krsStateUI.collectAsState().value,
+                onClikButton = {
+                    navController.navigate(Halaman.Splash.name)
                 }
             )
         }

@@ -20,11 +20,10 @@ import com.example.pertmuan8pam.model.Mahasiswa
 import com.example.pertmuan8pam.model.RencanaStudy
 
 @Composable
-fun DataMahasiswaView(
+fun Tampil(
     modifier: Modifier = Modifier,
     uiStateMahasiswa: Mahasiswa,
     krsState:RencanaStudy,
-
     onClikButton: () -> Unit
 ){
     val listDataMhs = listOf(
