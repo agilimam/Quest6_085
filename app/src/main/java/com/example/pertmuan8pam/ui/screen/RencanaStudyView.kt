@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -33,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertmuan8pam.R
 import com.example.pertmuan8pam.data.MataKuliah
+import com.example.pertmuan8pam.data.RuangKelas
 import com.example.pertmuan8pam.model.Mahasiswa
 import com.example.pertmuan8pam.ui.widget.DynaminSelectedField
 
@@ -122,6 +124,15 @@ fun RencanaStudyView(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
+                    RuangKelas.listKelas.forEach { listData ->
+                        Row (verticalAlignment = Alignment.CenterVertically){
+                            RadioButton(
+                                selected = pilihanKelas == listData,
+                                onClick = {pilihanKelas = listData}
+                            )
+                            Text(listData)
+                        }
+                    }
 
 
                 }
