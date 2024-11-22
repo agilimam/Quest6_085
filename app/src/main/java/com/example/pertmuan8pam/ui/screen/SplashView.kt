@@ -20,9 +20,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.pertmuan8pam.R
 
-@Preview(showBackground = true)
+
 @Composable
-fun SplashView(){
+fun SplashView(onMulaiButton: ()-> Unit){
     Column (modifier = Modifier
         .fillMaxSize()
         .background(color = colorResource(
