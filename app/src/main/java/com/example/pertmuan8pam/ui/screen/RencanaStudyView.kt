@@ -1,5 +1,6 @@
 package com.example.petemuan8.ui.screen
 
+import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -22,13 +23,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ModifierInfo
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertmuan8pam.R
+import com.example.pertmuan8pam.data.MataKuliah
 import com.example.pertmuan8pam.model.Mahasiswa
+import com.example.pertmuan8pam.ui.widget.DynaminSelectedField
 
 
 @Composable
@@ -92,6 +96,15 @@ fun RencanaStudyView(
                     text = "Silahkan Pilih Mata Kuliah Yang anda Inginkan",
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Light
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
+                DynaminSelectedField(
+                    selectedValue = chosenDropdown,
+                    options = MataKuliah.option,
+                    label = "Mata Kuliah",
+                    onValueChangeEvent = {
+                        chosenDropdown = it
+                    }
                 )
 
             }
