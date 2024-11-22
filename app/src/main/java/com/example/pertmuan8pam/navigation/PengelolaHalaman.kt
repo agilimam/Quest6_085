@@ -1,5 +1,6 @@
 package com.example.pertmuan8pam.navigation
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 
 import androidx.compose.runtime.Composable
@@ -11,6 +12,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.pertmuan8pam.ui.screen.MahasiswaFormView
 import com.example.pertmuan8pam.ui.screen.SplashView
 import com.example.pertmuan8pam.ui.view.MahasiswaViewModel
 import com.example.pertmuan8pam.ui.view.RencanaStudyViewModel
@@ -42,7 +44,18 @@ fun PengelolaHalaman(
                 )
             })
         }
-
+        composable(route = Halaman.Mahasiswa.name){
+            MahasiswaFormView(
+                modifier = Modifier.fillMaxSize(),
+                onSubmitButtonClicked = {
+                    mahasiswaViewModel.saveDataMahasiswa(it)
+                    navController.navigate(Halaman.Matakuliah.name)
+                },
+                onBackButtonClicked = {
+                    navController.popBackStack()
+                }
+            )
+        }
     }
 }
 

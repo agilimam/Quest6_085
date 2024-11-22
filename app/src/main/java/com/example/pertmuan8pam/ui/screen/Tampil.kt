@@ -25,7 +25,7 @@ fun DataMahasiswaView(
     uiStateMahasiswa: Mahasiswa,
     krsState:RencanaStudy,
 
-    onClikButton: () -> Boolean
+    onClikButton: () -> Unit
 ){
     val listDataMhs = listOf(
         Pair("Nama", uiStateMahasiswa.nama),
