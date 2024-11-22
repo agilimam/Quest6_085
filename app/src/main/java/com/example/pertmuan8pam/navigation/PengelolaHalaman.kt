@@ -16,6 +16,7 @@ import com.example.pertmuan8pam.ui.screen.MahasiswaFormView
 import com.example.pertmuan8pam.ui.screen.SplashView
 import com.example.pertmuan8pam.ui.view.MahasiswaViewModel
 import com.example.pertmuan8pam.ui.view.RencanaStudyViewModel
+import com.example.petemuan8.ui.screen.RencanaStudyView
 
 enum class Halaman{
     Mahasiswa,
@@ -50,6 +51,18 @@ fun PengelolaHalaman(
                 onSubmitButtonClicked = {
                     mahasiswaViewModel.saveDataMahasiswa(it)
                     navController.navigate(Halaman.Matakuliah.name)
+                },
+                onBackButtonClicked = {
+                    navController.popBackStack()
+                }
+            )
+        }
+        composable(route = Halaman.Mahasiswa.name){
+            RencanaStudyView(
+                mahasiswa = mahasiswaUIState,
+                onSubmitButtonClicked = {
+                    MatakuliahViewModel.saveDataKRS(it)
+                    navController.navigate(Halaman.Tampil.name)
                 },
                 onBackButtonClicked = {
                     navController.popBackStack()
