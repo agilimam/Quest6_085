@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.RadioButton
@@ -146,12 +147,24 @@ fun RencanaStudyView(
                         onCheckedChange = {checked = it},
                         enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
                     )
-
+                    Text(
+                        text = "Saya menyetujui setiap pertanyaan yang ada tanpa ada pakksan dari pihak mananpun",
+                        fontWeight = FontWeight.Light, fontSize = 10.sp
+                    )
                 }
-
-
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ){
+                    Button(onClick = {onBackButtonClicked()}) {
+                        Text(text = "Kembali")
+                    }
+                    Button(onClick = {onSubmitButtonClicked(listData)}, enabled = checked) {
+                        Text(text = "Lanjut")
+                    }
+                }
             }
-
         }
 
     }
