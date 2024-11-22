@@ -1,17 +1,17 @@
 package com.example.pertmuan8pam.navigation
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.pertmuan8pam.ui.screen.SplashView
 import com.example.pertmuan8pam.ui.view.MahasiswaViewModel
 import com.example.pertmuan8pam.ui.view.RencanaStudyViewModel
 
@@ -35,6 +35,13 @@ fun PengelolaHalaman(
         startDestination = Halaman.Splash.name,
         modifier = Modifier.padding(8.dp)
     ){
+        composable(route = Halaman.Splash.name){
+            SplashView(onMulaiButton = {
+                navController.navigate(
+                    Halaman.Mahasiswa.name
+                )
+            })
+        }
 
     }
 }
